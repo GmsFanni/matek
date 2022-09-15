@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+
+    <style>
+        .container {
+        width: 500px;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        box-shadow: 10px 10px 20px gray;
+        
+        }
+        .alakzat{
+            width: 500px;
+            height: 100px;
+            
+            display: flex;
+            justify-content:center;
+            align-items: center;
+        }
+
+        #szoveg{
+            width: 100px;
+            height: 50px;
+        }
+        #szam1{
+            font-size: 25px;
+        }
+        #szam2{
+            font-size: 25px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+    <h3>Jó vagy fejszámolásban?</h3>
+    <button onclick="gomb()">Új számot kérek!</button>
+
+
+    
+  <div class="alakzat">
+    <div id="szam1"></div> 
+    <i class="fa-solid fa-plus"></i>
+    <div id="szam2"></div>
+    <i class="fa-solid fa-equals"></i>
+    
+    <input type="text" name="" id="szoveg" onkeyup="szamol()">
+
+    
+    
+   
+
+    
+</div>    
+
+    
+</div>
+
+    <i class="fa-solid fa-question"></i>
+    <i class="fa-duotone fa-thumbs-up"></i>
+    <i class="fa-solid fa-thumbs-down"></i>
+    
+
+    <script>
+function gomb(){
+
+
+        let vszam=()=>Math.floor(Math.random()*100 +1)
+        //console.log(vszam())
+
+        let vszam2=()=>Math.floor(Math.random()*100 +1)
+        
+        //console.log(vszam())
+        document.querySelector('#szam1').innerHTML=vszam();
+        document.querySelector('#szam2').innerHTML=vszam2();
+
+        
+
+
+}    
+
+function szamol(){
+    let velszam=Number(document.getElementById('szam1').textContent)
+    let velszam2=Number(document.getElementById('szam2').textContent)
+    
+    
+
+   
+
+    
+    let x=document.getElementById('szoveg').value
+    console.log(velszam+velszam2)
+        if(x ==velszam+velszam2){
+            document.getElementById('fa-duotone fa-thumbs-up')
+            console.log("jó")
+        }
+        else{
+            document.querySelector('fa-duotone fa-thumbs-down')
+            console.log("nem jó")
+        }
+        
+
+}
+
+
+    </script>
+
+</body>
+</html>
